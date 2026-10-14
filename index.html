@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="./industry.css">
+<script src="_ds/industry-1d143088-10c3-4bcf-a037-a7ce48f4a4dc/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; -webkit-font-smoothing: antialiased; }
+  a { color: var(--color-accent-700); }
+  a:hover { color: var(--color-accent-900); }
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:var(--color-bg);color:var(--color-text)">
+
+  <header style="position:sticky;top:0;z-index:20;background:var(--color-bg);border-bottom:1px solid var(--color-divider)">
+    <div style="max-width:1180px;margin:0 auto;padding:14px clamp(20px,5vw,56px);display:flex;align-items:center;gap:24px;flex-wrap:wrap">
+      <a href="#" onClick="{{ goHome }}" style="display:flex;align-items:baseline;gap:9px;margin-right:auto;text-decoration:none;color:inherit">
+        <span style="display:flex;gap:3px"><span style="width:11px;height:11px;background:var(--color-accent);display:block"></span><span style="width:11px;height:11px;background:var(--color-accent-2);display:block"></span></span>
+        <span style="font-family:var(--font-heading);font-weight:600;font-size:20px;letter-spacing:0.02em;text-transform:uppercase">Simer Analytics</span>
+      </a>
+      <nav style="display:flex;align-items:center;gap:22px;font-size:14px">
+        <a href="#" onClick="{{ goHome }}" style="text-decoration:none;color:inherit">Home</a>
+        <a href="#" onClick="{{ goServices }}" style="text-decoration:none;color:inherit">Services</a>
+        <a href="#" onClick="{{ goIndustries }}" style="text-decoration:none;color:inherit">Industries</a>
+        <a href="#" onClick="{{ goContact }}" style="text-decoration:none;color:inherit">Contact</a>
+      </nav>
+      <a href="#" onClick="{{ goContact }}" class="btn btn-primary blueprint" style="text-decoration:none">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        Book a free call
+      </a>
+    </div>
+  </header>
+
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <main>
+    <div style="position:relative;background:var(--color-bg)">
+      <div style="position:absolute;inset:0;overflow:hidden" style-after="content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg, var(--color-accent) 0%, var(--color-accent) 20%, var(--color-accent-2) 88%);mix-blend-mode:color">
+        <image-slot id="band" shape="rect" fit="cover" src="./photo.jpg" placeholder="wide photograph — desks, drawings, screens"></image-slot>
+      </div>
+      <div style="position:absolute;inset:0;pointer-events:none;background-image:repeating-linear-gradient(to right, color-mix(in srgb, var(--color-text) 7%, transparent) 0 1px, transparent 1px 72px),repeating-linear-gradient(to bottom, color-mix(in srgb, var(--color-text) 7%, transparent) 0 1px, transparent 1px 72px),radial-gradient(70% 70% at 0% 100%, color-mix(in srgb, var(--color-accent-2) 20%, transparent), transparent 62%),linear-gradient(to bottom, var(--color-bg) 0%, var(--color-bg) 46%, color-mix(in srgb, var(--color-bg) 72%, transparent) 62%, color-mix(in srgb, var(--color-bg) 16%, transparent) 88%, color-mix(in srgb, var(--color-bg) 30%, transparent) 100%)"></div>
+    <section style="position:relative;z-index:1;pointer-events:none;max-width:1180px;margin:0 auto;padding:clamp(44px,7vw,92px) clamp(20px,5vw,56px) clamp(200px,26vw,340px);display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(32px,5vw,64px);align-items:start">
+      <div style="min-width:0;pointer-events:auto">
+        <sc-if value="{{ showAvailability }}" hint-placeholder-val="{{ true }}">
+          <span class="tag" style="margin-bottom:20px;border:1px solid var(--color-accent-2);color:var(--color-accent-2-800)">Taking on two new clients this quarter</span>
+        </sc-if>
+        <h1 style="font-size:clamp(38px,5.4vw,68px);line-height:1.02;letter-spacing:-0.02em;margin:14px 0 18px;max-width:15em">Your data + our roadmap = endless opportunities.</h1>
+        <p style="font-family:var(--font-heading);font-size:clamp(17px,1.7vw,21px);line-height:1.35;letter-spacing:0.01em;margin:0 0 18px;max-width:26em;color:var(--color-accent-800)">Twenty-eight years inside utility data — budgeting, meter data management, forecasting, rate design, planning, GIS and compliance.</p>
+        <p style="font-size:clamp(16px,1.5vw,19px);line-height:1.6;max-width:38em;margin:0 0 14px;color:var(--color-neutral-800)">We're a small team that sits where data analysis, engineering and software actually meet. That means you can bring us a messy spreadsheet, a warehouse nobody trusts, or an idea for an app — and get one person accountable for all of it.</p>
+        <p style="font-size:clamp(16px,1.5vw,19px);line-height:1.6;max-width:38em;margin:0 0 30px;color:var(--color-neutral-800)">No lock-in, no jargon, no fifty-slide discovery deck. We start by looking at what you've got and telling you honestly what's worth doing first.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px">
+          <a href="#" onClick="{{ goContact }}" class="btn btn-primary blueprint" style="text-decoration:none;font-size:15px;padding:12px 22px">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            Book a free discovery call
+          </a>
+          <a href="#" onClick="{{ goServices }}" class="btn btn-secondary" style="text-decoration:none;font-size:15px;padding:12px 22px">See what we do</a>
+        </div>
+      </div>
+
+      <sc-if value="{{ heroPlate }}" hint-placeholder-val="{{ true }}">
+      <div class="blueprint" style="min-width:0;pointer-events:auto;padding:24px 26px 20px;background:color-mix(in srgb, var(--color-bg) 70%, transparent)">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding-bottom:14px;border-bottom:1px solid var(--color-divider)">
+          <span style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-accent-700)">Capability map</span>
+          <span style="font-family:var(--font-heading);font-size:12px;letter-spacing:0.1em;color:var(--color-neutral-600)">REV. 2026</span>
+        </div>
+        <div style="display:flex;flex-direction:column">
+          <div style="display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid color-mix(in srgb, var(--color-text) 8%, transparent)"><span style="font-size:15px">Data analysis &amp; reporting</span><span style="font-family:var(--font-heading);font-size:13px;color:var(--color-neutral-600)">01</span></div>
+          <div style="display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid color-mix(in srgb, var(--color-text) 8%, transparent)"><span style="font-size:15px">Data engineering &amp; pipelines</span><span style="font-family:var(--font-heading);font-size:13px;color:var(--color-accent-2-600)">02</span></div>
+          <div style="display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid color-mix(in srgb, var(--color-text) 8%, transparent)"><span style="font-size:15px">Process automation</span><span style="font-family:var(--font-heading);font-size:13px;color:var(--color-neutral-600)">03</span></div>
+          <div style="display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid color-mix(in srgb, var(--color-text) 8%, transparent)"><span style="font-size:15px">AI &amp; LLM development</span><span style="font-family:var(--font-heading);font-size:13px;color:var(--color-accent-2-600)">04</span></div>
+          <div style="display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid color-mix(in srgb, var(--color-text) 8%, transparent)"><span style="font-size:15px">Web &amp; SaaS applications</span><span style="font-family:var(--font-heading);font-size:13px;color:var(--color-neutral-600)">05</span></div>
+          <div style="display:flex;justify-content:space-between;gap:16px;padding:11px 0"><span style="font-size:15px">APIs &amp; integrations</span><span style="font-family:var(--font-heading);font-size:13px;color:var(--color-accent-2-600)">06</span></div>
+        </div>
+      </div>
+      </sc-if>
+    </section>
+    <div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,56px)">
+      <div style="height:13px;background-image:repeating-linear-gradient(to right, var(--color-accent-2) 0 1px, transparent 1px 70px),repeating-linear-gradient(to right, color-mix(in srgb, var(--color-text) 28%, transparent) 0 1px, transparent 1px 14px);background-position:bottom,bottom;background-repeat:repeat-x,repeat-x;background-size:100% 12px,100% 7px;border-bottom:1px solid var(--color-divider)"></div>
+    </div>
+    </div>
+
+    <section style="border-top:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider)">
+      <div style="max-width:1180px;margin:0 auto;padding:clamp(40px,6vw,80px) clamp(20px,5vw,56px)">
+        <span style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-accent-700)">How we engage</span>
+        <h2 style="font-size:clamp(28px,3.4vw,42px);margin:12px 0 14px;max-width:24em">Audit, build, maintain — in that order, and you can stop after any of them.</h2>
+        <p style="max-width:44em;font-size:17px;color:var(--color-neutral-800);margin:0 0 clamp(28px,4vw,44px)">Most people who call us aren't sure what they need yet. That's fine — that's what the audit is for. Each stage stands on its own, and you decide whether there's a next one.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(20px,3vw,32px)">
+          <div class="blueprint" style="padding:24px;display:flex;flex-direction:column;gap:10px">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <span style="font-family:var(--font-heading);font-size:34px;line-height:1;color:var(--color-accent)">01</span>
+            <h3 style="font-size:24px;margin:6px 0 0">Audit</h3>
+            <p style="font-size:15px;color:var(--color-neutral-800);margin:0">One to two weeks. We map where your data lives, what's breaking, and what it's costing you in hours. You leave with a written roadmap you own — even if you never hire us again.</p>
+            <span style="font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600);margin-top:6px">Output: roadmap &amp; costed options</span>
+          </div>
+          <div class="blueprint" style="padding:24px;display:flex;flex-direction:column;gap:10px">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <span style="font-family:var(--font-heading);font-size:34px;line-height:1;color:var(--color-accent-2-600)">02</span>
+            <h3 style="font-size:24px;margin:6px 0 0">Build</h3>
+            <p style="font-size:15px;color:var(--color-neutral-800);margin:0">Two-week slices, something usable at the end of each one. Pipelines, dashboards, automations, an internal tool, a customer-facing app — whatever the roadmap said mattered most.</p>
+            <span style="font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600);margin-top:6px">Output: working software</span>
+          </div>
+          <div class="blueprint" style="padding:24px;display:flex;flex-direction:column;gap:10px">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <span style="font-family:var(--font-heading);font-size:34px;line-height:1;color:var(--color-accent)">03</span>
+            <h3 style="font-size:24px;margin:6px 0 0">Maintain</h3>
+            <p style="font-size:15px;color:var(--color-neutral-800);margin:0">Monitoring, fixes and small improvements on a monthly retainer — or a clean handover to your own team with documentation they can actually follow. Your call.</p>
+            <span style="font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600);margin-top:6px">Output: retainer or handover</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="max-width:1180px;margin:0 auto;padding:clamp(40px,6vw,80px) clamp(20px,5vw,56px)">
+      <div style="display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(24px,4vw,40px)">
+        <div>
+          <span style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-accent-700)">What we do</span>
+          <h2 style="font-size:clamp(28px,3.4vw,42px);margin:12px 0 0">Six things, one team</h2>
+        </div>
+        <a href="#" onClick="{{ goServices }}" class="btn btn-ghost" style="text-decoration:none">Full breakdown →</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:var(--color-divider);border:1px solid var(--color-divider)">
+        <div style="background:var(--color-bg);padding:26px 24px">
+          <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.1em;color:var(--color-accent)">01</span>
+          <h3 style="font-size:21px;margin:10px 0 8px">Data analysis</h3>
+          <p style="font-size:15px;color:var(--color-neutral-800);margin:0">Answers to real questions — which customers stay, where margin leaks, what next quarter looks like. Dashboards only where someone will actually use them.</p>
+        </div>
+        <div style="background:var(--color-bg);padding:26px 24px">
+          <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.1em;color:var(--color-accent-2-700)">02</span>
+          <h3 style="font-size:21px;margin:10px 0 8px">Data engineering</h3>
+          <p style="font-size:15px;color:var(--color-neutral-800);margin:0">Pipelines, warehouses and models that hold up. Migrations off the thing that keeps failing at 3am, with tests so you know when something drifts.</p>
+        </div>
+        <div style="background:var(--color-bg);padding:26px 24px">
+          <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.1em;color:var(--color-accent)">03</span>
+          <h3 style="font-size:21px;margin:10px 0 8px">Automation</h3>
+          <p style="font-size:15px;color:var(--color-neutral-800);margin:0">The monthly report that eats three days, the copy-paste between two systems, the invoice chase. Scheduled, monitored, and it emails you when it can't cope.</p>
+        </div>
+        <div style="background:var(--color-bg);padding:26px 24px">
+          <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.1em;color:var(--color-accent-2-700)">04</span>
+          <h3 style="font-size:21px;margin:10px 0 8px">AI development</h3>
+          <p style="font-size:15px;color:var(--color-neutral-800);margin:0">Assistants grounded in your own documents, extraction from PDFs and emails, classification and routing. Built with evaluation, not vibes.</p>
+        </div>
+        <div style="background:var(--color-bg);padding:26px 24px">
+          <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.1em;color:var(--color-accent)">05</span>
+          <h3 style="font-size:21px;margin:10px 0 8px">Web &amp; SaaS apps</h3>
+          <p style="font-size:15px;color:var(--color-neutral-800);margin:0">Internal tools, client portals, multi-tenant products with billing and auth. From first screen to something your customers pay for.</p>
+        </div>
+        <div style="background:var(--color-bg);padding:26px 24px">
+          <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.1em;color:var(--color-accent-2-700)">06</span>
+          <h3 style="font-size:21px;margin:10px 0 8px">APIs &amp; integrations</h3>
+          <p style="font-size:15px;color:var(--color-neutral-800);margin:0">Making the tools you already pay for talk to each other — documented APIs, webhooks, and connectors that don't quietly stop working.</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-top:1px solid var(--color-divider)">
+      <div style="max-width:1180px;margin:0 auto;padding:clamp(40px,6vw,80px) clamp(20px,5vw,56px)">
+        <div style="display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(22px,3vw,34px)">
+          <div style="min-width:0">
+            <span style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-accent-700)">Where we know the terrain</span>
+            <h2 style="font-size:clamp(28px,3.4vw,42px);margin:12px 0 12px;max-width:24em">Twenty-eight years in utilities — and the industries next door</h2>
+            <p style="font-size:17px;line-height:1.6;color:var(--color-neutral-800);margin:0;max-width:44em">Interval data, GIS, rate and budget models, regulatory filings. The nouns change between these industries; the data problems barely do.</p>
+          </div>
+          <a href="#" onClick="{{ goIndustries }}" class="btn btn-ghost" style="text-decoration:none">Industries in full →</a>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1px;background:var(--color-divider);border:1px solid var(--color-divider)">
+          <div style="background:var(--color-bg);padding:24px;display:flex;flex-direction:column;gap:9px">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+              <h3 style="font-size:21px;margin:0">Electric, gas &amp; water utilities</h3>
+              <span class="tag" style="border:1px solid var(--color-accent);color:var(--color-accent-800);flex:none">Home ground</span>
+            </div>
+            <p style="font-size:15px;color:var(--color-neutral-800);margin:0">Meter data management, load and revenue forecasting, rate design support, budget and capital planning, GIS, and the compliance calendar that never moves.</p>
+          </div>
+          <div style="background:var(--color-bg);padding:24px;display:flex;flex-direction:column;gap:9px">
+            <h3 style="font-size:21px;margin:0">Municipalities &amp; public works</h3>
+            <p style="font-size:15px;color:var(--color-neutral-800);margin:0">Water, sewer and street asset data on the same GIS stack, capital plans that have to survive a council meeting, and reporting the public can read.</p>
+          </div>
+          <div style="background:var(--color-bg);padding:24px;display:flex;flex-direction:column;gap:9px">
+            <h3 style="font-size:21px;margin:0">Renewables &amp; DER</h3>
+            <p style="font-size:15px;color:var(--color-neutral-800);margin:0">Interval generation data, interconnection queues, siting analysis and settlement reconciliation — the same time-series work, pointed the other direction.</p>
+          </div>
+          <div style="background:var(--color-bg);padding:24px;display:flex;flex-direction:column;gap:9px">
+            <h3 style="font-size:21px;margin:0">Energy retail &amp; demand response</h3>
+            <p style="font-size:15px;color:var(--color-neutral-800);margin:0">Settlement on interval reads, load forecasting, customer and billing system data, and market compliance where being late is expensive.</p>
+          </div>
+          <div style="background:var(--color-bg);padding:24px;display:flex;flex-direction:column;gap:9px">
+            <h3 style="font-size:21px;margin:0">Water districts &amp; irrigation</h3>
+            <p style="font-size:15px;color:var(--color-neutral-800);margin:0">Water rights accounting, interval flow and pumping data, mapped distribution networks, and allocation reporting to the state.</p>
+          </div>
+          <div style="background:var(--color-bg);padding:24px;display:flex;flex-direction:column;gap:9px">
+            <h3 style="font-size:21px;margin:0">Engineering &amp; utility consultancies</h3>
+            <p style="font-size:15px;color:var(--color-neutral-800);margin:0">You have the clients and the engineering; we bring the data hands. Quiet subcontract work under your name, on your deadlines.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-top:1px solid var(--color-divider);background-color:var(--color-accent-900);color:var(--color-neutral-100);background-image:repeating-linear-gradient(to right, color-mix(in srgb, #f5f5f8 9%, transparent) 0 1px, transparent 1px 72px),repeating-linear-gradient(to bottom, color-mix(in srgb, #f5f5f8 9%, transparent) 0 1px, transparent 1px 72px)">
+      <div style="max-width:1180px;margin:0 auto;padding:clamp(40px,6vw,80px) clamp(20px,5vw,56px)">
+        <span style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-accent-300)">How we work</span>
+        <h2 style="font-size:clamp(28px,3.4vw,42px);margin:12px 0 clamp(28px,4vw,44px);max-width:22em;color:var(--color-neutral-100)">Four steps, and you can see the work the whole way through.</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(24px,3vw,36px)">
+          <div style="border-top:1px solid color-mix(in srgb, #f5f5f8 30%, transparent);padding-top:18px">
+            <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.1em;color:var(--color-accent-300)">STEP 01</span>
+            <h4 style="font-size:20px;margin:10px 0 8px;color:var(--color-neutral-100)">A conversation</h4>
+            <p style="font-size:15px;margin:0;color:var(--color-neutral-200)">Thirty minutes, no deck. You tell us what's frustrating; we tell you whether we're the right people. Sometimes the answer is no, and we'll say so.</p>
+          </div>
+          <div style="border-top:1px solid color-mix(in srgb, #f5f5f8 30%, transparent);padding-top:18px">
+            <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.1em;color:var(--color-accent-2-300)">STEP 02</span>
+            <h4 style="font-size:20px;margin:10px 0 8px;color:var(--color-neutral-100)">The audit</h4>
+            <p style="font-size:15px;margin:0;color:var(--color-neutral-200)">We get read access, follow the data, talk to the people using it. You get a plain-English roadmap with effort and cost against each item.</p>
+          </div>
+          <div style="border-top:1px solid color-mix(in srgb, #f5f5f8 30%, transparent);padding-top:18px">
+            <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.1em;color:var(--color-accent-300)">STEP 03</span>
+            <h4 style="font-size:20px;margin:10px 0 8px;color:var(--color-neutral-100)">The build</h4>
+            <p style="font-size:15px;margin:0;color:var(--color-neutral-200)">Two-week slices, a short demo at the end of each, and a standing invite to your channel. Priorities can change between slices; nothing is locked in a contract you regret.</p>
+          </div>
+          <div style="border-top:1px solid color-mix(in srgb, #f5f5f8 30%, transparent);padding-top:18px">
+            <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.1em;color:var(--color-accent-2-300)">STEP 04</span>
+            <h4 style="font-size:20px;margin:10px 0 8px;color:var(--color-neutral-100)">Keeping it alive</h4>
+            <p style="font-size:15px;margin:0;color:var(--color-neutral-200)">Alerts, documentation, and a walkthrough with whoever inherits it. We'd rather you didn't need us than have you stuck with us.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="max-width:1180px;margin:0 auto;padding:clamp(40px,6vw,80px) clamp(20px,5vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,5vw,64px);align-items:start">
+      <div style="min-width:0">
+        <span style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-accent-700)">Who you'd be working with</span>
+        <h2 style="font-size:clamp(28px,3.4vw,42px);margin:12px 0 18px">Small on purpose</h2>
+        <p style="font-size:17px;line-height:1.65;color:var(--color-neutral-800);margin:0 0 14px">Simer Analytics came out of twenty-eight years in utilities — budgets and rate cases, meter data management, forecasting, planning and GIS, with a compliance deadline always somewhere on the horizon. Long enough to watch good analysis die because nobody could get the pipeline to run, and working pipelines sit unused because nobody made them easy to look at.</p>
+        <p style="font-size:17px;line-height:1.65;color:var(--color-neutral-800);margin:0 0 14px">So we kept the team small and the range wide. The person who scopes your project is the person who writes the queries, builds the pipeline and ships the app. You won't get handed to a junior after the sales call, because there isn't a sales call.</p>
+        <p style="font-size:17px;line-height:1.65;color:var(--color-neutral-800);margin:0 0 24px">That background means you won't spend the first month explaining your industry to us. It also means we've built the ordinary things — dashboards, pipelines, internal tools, integrations — for people who answer to a regulator, and for plenty who don't.</p>
+        <a href="#" onClick="{{ goContact }}" class="btn btn-secondary" style="text-decoration:none;font-size:15px;padding:12px 22px">Say hello</a>
+      </div>
+      <sc-if value="{{ showFounderPhoto }}" hint-placeholder-val="{{ true }}">
+      <figure class="blueprint" style="min-width:0;padding:10px">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <div style="position:relative;width:100%;aspect-ratio:4/5;overflow:hidden" style-after="content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(150deg, var(--color-accent-2) 0%, var(--color-accent-2) 22%, var(--color-accent) 92%);mix-blend-mode:color">
+          <image-slot id="founder" shape="rect" fit="cover" placeholder="founder portrait — drop an image"></image-slot>
+        </div>
+        <figcaption style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:0.04em;margin-top:10px;color:var(--color-neutral-600)">FIG. 01 — founder portrait</figcaption>
+      </figure>
+      </sc-if>
+    </section>
+
+    <section id="contact" style="border-top:1px solid var(--color-divider);background-image:radial-gradient(90% 120% at 100% 100%, color-mix(in srgb, var(--color-accent) 15%, transparent), transparent 60%),radial-gradient(70% 90% at 0% 0%, color-mix(in srgb, var(--color-accent-2) 18%, transparent), transparent 58%),repeating-linear-gradient(to right, color-mix(in srgb, var(--color-text) 6%, transparent) 0 1px, transparent 1px 72px),repeating-linear-gradient(to bottom, color-mix(in srgb, var(--color-text) 6%, transparent) 0 1px, transparent 1px 72px)">
+      <div style="max-width:1180px;margin:0 auto;padding:clamp(40px,6vw,80px) clamp(20px,5vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,5vw,64px);align-items:start">
+        <div style="min-width:0">
+          <span style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-accent-700)">Start here</span>
+          <h2 style="font-size:clamp(28px,3.4vw,42px);margin:12px 0 18px;max-width:20em">Book a free discovery call</h2>
+          <p style="font-size:17px;line-height:1.65;color:var(--color-neutral-800);margin:0 0 22px;max-width:34em">Thirty minutes, genuinely free, no obligation. Tell us roughly what's going on and we'll come with questions — and usually one or two things you could fix without hiring anyone.</p>
+          <div style="display:flex;flex-direction:column;gap:10px;font-size:15px;color:var(--color-neutral-800)">
+            <div style="display:flex;gap:10px"><span style="color:var(--color-accent)">+</span><span>We reply within one business day.</span></div>
+            <div style="display:flex;gap:10px"><span style="color:var(--color-accent-2-600)">+</span><span>You'll speak to the person who'd do the work.</span></div>
+            <div style="display:flex;gap:10px"><span style="color:var(--color-accent)">+</span><span>Happy to sign an NDA before you share anything.</span></div>
+          </div>
+        </div>
+        <div class="blueprint" style="min-width:0;padding:clamp(22px,3vw,32px)">
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ onSubmit }}" style="display:flex;flex-direction:column;gap:16px">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px">
+              <div class="field"><label for="h-name">Your name</label><input class="input" id="h-name" type="text" placeholder="Alex Mercer" required="required"></div>
+              <div class="field"><label for="h-email">Email</label><input class="input" id="h-email" type="email" placeholder="alex@company.com" required="required"></div>
+            </div>
+            <div class="field"><label for="h-company">Company</label><input class="input" id="h-company" type="text" placeholder="Company or team name"></div>
+            <div class="field">
+              <label for="h-need">What's going on?</label>
+              <textarea class="input" id="h-need" placeholder="A sentence or two is plenty — what's slow, broken, or missing." required="required"></textarea>
+            </div>
+            <button class="btn btn-primary blueprint" type="submit" style="font-size:15px;padding:13px 22px;align-self:start">
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+              Request a call
+            </button>
+            <p style="font-size:12px;color:var(--color-neutral-600);margin:0">Or email us directly at <a href="mailto:hello@simeranalytics.com">hello@simeranalytics.com</a>.</p>
+          </form>
+          </sc-if>
+          <sc-if value="{{ sent }}">
+          <div style="display:flex;flex-direction:column;gap:12px;padding:12px 0">
+            <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.1em;color:var(--color-accent)">RECEIVED</span>
+            <h3 style="font-size:26px;margin:0">Thanks — that's landed.</h3>
+            <p style="font-size:16px;color:var(--color-neutral-800);margin:0">We'll come back to you within one business day with a couple of times for a call. If it's urgent, email <a href="mailto:hello@simeranalytics.com">hello@simeranalytics.com</a> and say so.</p>
+          </div>
+          </sc-if>
+        </div>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isServices }}" hint-placeholder-val="{{ false }}">
+  <main>
+    <div style="background-image:radial-gradient(110% 100% at 92% -10%, color-mix(in srgb, var(--color-accent) 17%, transparent), transparent 62%),radial-gradient(70% 80% at 0% 110%, color-mix(in srgb, var(--color-accent-2) 20%, transparent), transparent 58%),repeating-linear-gradient(to right, color-mix(in srgb, var(--color-text) 6%, transparent) 0 1px, transparent 1px 72px),repeating-linear-gradient(to bottom, color-mix(in srgb, var(--color-text) 6%, transparent) 0 1px, transparent 1px 72px)">
+    <section style="max-width:1180px;margin:0 auto;padding:clamp(40px,6vw,76px) clamp(20px,5vw,56px) clamp(28px,4vw,48px)">
+      <span style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-accent-700)">Services</span>
+      <h1 style="font-size:clamp(34px,4.6vw,58px);line-height:1.05;margin:12px 0 18px;max-width:22em">Everything between the raw data and the thing your team opens every morning.</h1>
+      <p style="font-family:var(--font-heading);font-size:clamp(17px,1.8vw,22px);line-height:1.35;color:var(--color-accent-800);max-width:28em;margin:0 0 14px">Built on twenty-eight years in utilities — and useful to anyone whose business is metered, mapped or regulated.</p>
+      <p style="font-size:18px;line-height:1.6;color:var(--color-neutral-800);max-width:44em;margin:0">You don't have to know which of these you need. Most projects start as an audit and turn into two or three of them.</p>
+    </section>
+    </div>
+
+    <section style="border-top:1px solid var(--color-divider)">
+      <div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,56px)">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(28px,4vw,48px);padding:clamp(36px,5vw,64px) 0">
+          <div style="min-width:0">
+            <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.1em;color:var(--color-accent)">01</span>
+            <h2 style="font-size:clamp(24px,2.6vw,32px);margin:10px 0 10px">Data analysis &amp; reporting</h2>
+            <p style="font-size:16px;line-height:1.6;color:var(--color-neutral-800);margin:0 0 16px">We start from the decision, not the chart. What are you trying to choose between, and what would change your mind? Then we build the smallest thing that answers it.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px"><span class="tag tag-accent">Exec dashboards</span><span class="tag tag-accent">Cohort &amp; retention</span><span class="tag tag-accent">Forecasting</span><span class="tag tag-accent">Ad-hoc deep dives</span><span class="tag tag-accent">Data QA</span></div>
+          </div>
+          <div style="min-width:0">
+            <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.1em;color:var(--color-accent-2-700)">02</span>
+            <h2 style="font-size:clamp(24px,2.6vw,32px);margin:10px 0 10px">Data engineering</h2>
+            <p style="font-size:16px;line-height:1.6;color:var(--color-neutral-800);margin:0 0 16px">Ingestion, modelling and a warehouse your analysts trust. Built plainly, with tests and documentation, so the next person can pick it up without a handover call.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px"><span class="tag tag-accent-2">Warehouse setup</span><span class="tag tag-accent-2">ELT pipelines</span><span class="tag tag-accent-2">Transformation models</span><span class="tag tag-accent-2">Migrations</span><span class="tag tag-accent-2">Monitoring</span></div>
+          </div>
+          <div style="min-width:0">
+            <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.1em;color:var(--color-accent)">03</span>
+            <h2 style="font-size:clamp(24px,2.6vw,32px);margin:10px 0 10px">Process automation</h2>
+            <p style="font-size:16px;line-height:1.6;color:var(--color-neutral-800);margin:0 0 16px">Find the recurring manual job, work out the rules with the person who does it, and take it off their desk. Then leave them a way to check it's still right.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px"><span class="tag tag-accent">Scheduled reporting</span><span class="tag tag-accent">Document workflows</span><span class="tag tag-accent">Alerting</span><span class="tag tag-accent">Spreadsheet replacement</span></div>
+          </div>
+          <div style="min-width:0">
+            <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.1em;color:var(--color-accent-2-700)">04</span>
+            <h2 style="font-size:clamp(24px,2.6vw,32px);margin:10px 0 10px">AI development</h2>
+            <p style="font-size:16px;line-height:1.6;color:var(--color-neutral-800);margin:0 0 16px">Useful, boring AI: pulling fields out of invoices, answering questions from your own handbook, sorting incoming requests. We measure whether it's actually right before it goes near a customer.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px"><span class="tag tag-accent-2">Retrieval assistants</span><span class="tag tag-accent-2">Document extraction</span><span class="tag tag-accent-2">Classification</span><span class="tag tag-accent-2">Evaluation harnesses</span></div>
+          </div>
+          <div style="min-width:0">
+            <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.1em;color:var(--color-accent)">05</span>
+            <h2 style="font-size:clamp(24px,2.6vw,32px);margin:10px 0 10px">Web &amp; SaaS applications</h2>
+            <p style="font-size:16px;line-height:1.6;color:var(--color-neutral-800);margin:0 0 16px">Internal tools that beat the spreadsheet, portals your clients log into, and full products with accounts, permissions and billing. Shipped in slices you can show people.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px"><span class="tag tag-accent">Internal tools</span><span class="tag tag-accent">Client portals</span><span class="tag tag-accent">Multi-tenant SaaS</span><span class="tag tag-accent">Auth &amp; billing</span></div>
+          </div>
+          <div style="min-width:0">
+            <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.1em;color:var(--color-accent-2-700)">06</span>
+            <h2 style="font-size:clamp(24px,2.6vw,32px);margin:10px 0 10px">APIs &amp; integrations</h2>
+            <p style="font-size:16px;line-height:1.6;color:var(--color-neutral-800);margin:0 0 16px">Your CRM, your billing, your warehouse and that one legacy system — talking to each other reliably, with retries, logs and a document explaining how it fits together.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px"><span class="tag tag-accent-2">REST &amp; webhook APIs</span><span class="tag tag-accent-2">Third-party connectors</span><span class="tag tag-accent-2">Sync jobs</span><span class="tag tag-accent-2">Documentation</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="industries" style="border-top:1px solid var(--color-divider)">
+      <div style="max-width:1180px;margin:0 auto;padding:clamp(40px,6vw,80px) clamp(20px,5vw,56px)">
+        <span style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-accent-700)">Industries</span>
+        <h2 style="font-size:clamp(28px,3.4vw,44px);margin:12px 0 14px;max-width:22em">Metered, mapped, or regulated — that's the pattern.</h2>
+        <p style="font-size:17px;line-height:1.6;color:var(--color-neutral-800);max-width:46em;margin:0 0 clamp(26px,4vw,40px)">Twenty-eight years of it were spent in utilities. Everything below shares at least two of those three traits, which is why the work travels — the systems have different names, the questions are the same.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1px;background:var(--color-divider);border:1px solid var(--color-divider)">
+          <div style="background:var(--color-bg);padding:26px 24px;display:flex;flex-direction:column;gap:12px">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+              <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.1em;color:var(--color-accent)">01</span>
+              <span class="tag" style="border:1px solid var(--color-accent);color:var(--color-accent-800);flex:none">Home ground</span>
+            </div>
+            <h3 style="font-size:22px;margin:0">Electric, gas &amp; water utilities</h3>
+            <p style="font-size:15px;line-height:1.6;color:var(--color-neutral-800);margin:0">Where the twenty-eight years were spent: meter data management, load and revenue forecasting, rate design support, budgeting and capital planning, GIS, and compliance reporting on a calendar that never moves.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:2px"><span class="tag tag-accent">Interval &amp; MDM data</span><span class="tag tag-accent">Forecasting</span><span class="tag tag-accent">Rate &amp; budget models</span><span class="tag tag-accent">GIS</span><span class="tag tag-accent">Regulatory filings</span></div>
+          </div>
+          <div style="background:var(--color-bg);padding:26px 24px;display:flex;flex-direction:column;gap:12px">
+            <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.1em;color:var(--color-accent-2-700)">02</span>
+            <h3 style="font-size:22px;margin:0">Municipalities &amp; public works</h3>
+            <p style="font-size:15px;line-height:1.6;color:var(--color-neutral-800);margin:0">The same GIS stack and the same asset questions, with a council and a public in the room. Water, sewer and street networks, condition and renewal, capital plans that have to be explained rather than just filed.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:2px"><span class="tag tag-accent-2">Asset &amp; network GIS</span><span class="tag tag-accent-2">Capital planning</span><span class="tag tag-accent-2">Public reporting</span></div>
+          </div>
+          <div style="background:var(--color-bg);padding:26px 24px;display:flex;flex-direction:column;gap:12px">
+            <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.1em;color:var(--color-accent)">03</span>
+            <h3 style="font-size:22px;margin:0">Renewables &amp; DER</h3>
+            <p style="font-size:15px;line-height:1.6;color:var(--color-neutral-800);margin:0">Interval data pointed the other way. Generation and curtailment analysis, interconnection queue tracking, siting and constraint mapping, and settlement reconciliation that ties back to the meter.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:2px"><span class="tag tag-accent">Generation time series</span><span class="tag tag-accent">Interconnection</span><span class="tag tag-accent">Siting analysis</span><span class="tag tag-accent">Settlement</span></div>
+          </div>
+          <div style="background:var(--color-bg);padding:26px 24px;display:flex;flex-direction:column;gap:12px">
+            <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.1em;color:var(--color-accent-2-700)">04</span>
+            <h3 style="font-size:22px;margin:0">Energy retail &amp; demand response</h3>
+            <p style="font-size:15px;line-height:1.6;color:var(--color-neutral-800);margin:0">Margin lives in the interval file. Settlement and reconciliation, load and price forecasting, customer and billing system data, program measurement, and market compliance where late is expensive.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:2px"><span class="tag tag-accent-2">Settlement</span><span class="tag tag-accent-2">Load forecasting</span><span class="tag tag-accent-2">Customer &amp; billing data</span><span class="tag tag-accent-2">Program M&amp;V</span></div>
+          </div>
+          <div style="background:var(--color-bg);padding:26px 24px;display:flex;flex-direction:column;gap:12px">
+            <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.1em;color:var(--color-accent)">05</span>
+            <h3 style="font-size:22px;margin:0">Water districts &amp; irrigation</h3>
+            <p style="font-size:15px;line-height:1.6;color:var(--color-neutral-800);margin:0">Metered, mapped and regulated all three. Water rights and allocation accounting, interval flow and pumping data, loss analysis across mapped distribution networks, and state reporting.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:2px"><span class="tag tag-accent">Water rights</span><span class="tag tag-accent">Flow &amp; pumping data</span><span class="tag tag-accent">Loss analysis</span><span class="tag tag-accent">State reporting</span></div>
+          </div>
+          <div style="background:var(--color-bg);padding:26px 24px;display:flex;flex-direction:column;gap:12px">
+            <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.1em;color:var(--color-accent-2-700)">06</span>
+            <h3 style="font-size:22px;margin:0">Engineering &amp; utility consultancies</h3>
+            <p style="font-size:15px;line-height:1.6;color:var(--color-neutral-800);margin:0">You have the clients and the engineering judgement; the data work is the bottleneck. We take it on quietly under your name, to your deadlines, and we speak your clients' language already.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:2px"><span class="tag tag-accent-2">White-label delivery</span><span class="tag tag-accent-2">Overflow capacity</span><span class="tag tag-accent-2">Data &amp; GIS support</span></div>
+          </div>
+        </div>
+        <p style="font-size:15px;color:var(--color-neutral-700);margin:clamp(20px,3vw,28px) 0 0;max-width:46em">Not on this list? If your business is metered, mapped or regulated, the odds are good. Ask.</p>
+      </div>
+    </section>
+
+    <section style="border-top:1px solid var(--color-divider);background:var(--color-accent-900);color:var(--color-neutral-100)">
+      <div style="max-width:1180px;margin:0 auto;padding:clamp(40px,6vw,72px) clamp(20px,5vw,56px);display:flex;flex-wrap:wrap;gap:28px;align-items:end;justify-content:space-between">
+        <div style="min-width:0">
+          <h2 style="font-size:clamp(26px,3.2vw,38px);margin:0 0 10px;color:var(--color-neutral-100);max-width:24em">Not sure which of these you need?</h2>
+          <p style="font-size:17px;margin:0;color:var(--color-neutral-200);max-width:40em">That's the normal starting point. Book the call and we'll work it out together — worst case you get a free second opinion.</p>
+        </div>
+        <a href="#" onClick="{{ goContact }}" class="btn blueprint" style="text-decoration:none;font-size:15px;padding:13px 24px;background:var(--color-neutral-100);color:var(--color-accent-900);border-color:var(--color-neutral-100)">
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          Book a free discovery call
+        </a>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}">
+  <main style="background-image:radial-gradient(80% 90% at 95% 0%, color-mix(in srgb, var(--color-accent) 16%, transparent), transparent 60%),radial-gradient(70% 80% at 0% 100%, color-mix(in srgb, var(--color-accent-2) 20%, transparent), transparent 58%),repeating-linear-gradient(to right, color-mix(in srgb, var(--color-text) 6%, transparent) 0 1px, transparent 1px 72px),repeating-linear-gradient(to bottom, color-mix(in srgb, var(--color-text) 6%, transparent) 0 1px, transparent 1px 72px)">
+    <section style="max-width:1180px;margin:0 auto;padding:clamp(40px,6vw,76px) clamp(20px,5vw,56px) clamp(44px,6vw,80px);display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(32px,5vw,64px);align-items:start">
+      <div style="min-width:0">
+        <span style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-accent-700)">Contact</span>
+        <h1 style="font-size:clamp(34px,4.4vw,54px);line-height:1.05;margin:12px 0 18px;max-width:18em">Let's have a proper conversation.</h1>
+        <p style="font-size:18px;line-height:1.6;color:var(--color-neutral-800);margin:0 0 28px;max-width:36em">Fill this in, or just email us. Either way a real person reads it and replies within one business day.</p>
+        <div class="blueprint" style="padding:22px 24px;display:flex;flex-direction:column;gap:14px">
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <div>
+            <span style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-neutral-600)">Email</span>
+            <p style="margin:4px 0 0;font-size:17px"><a href="mailto:hello@simeranalytics.com">hello@simeranalytics.com</a></p>
+          </div>
+          <div>
+            <span style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-neutral-600)">Where we are</span>
+            <p style="margin:4px 0 0;font-size:17px">Remote-first — working with clients across North America and Europe.</p>
+          </div>
+          <div>
+            <span style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-neutral-600)">Typical response</span>
+            <p style="margin:4px 0 0;font-size:17px">Within one business day, Monday to Friday.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="blueprint" style="min-width:0;padding:clamp(22px,3vw,34px)">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+        <form onSubmit="{{ onSubmit }}" style="display:flex;flex-direction:column;gap:18px">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px">
+            <div class="field"><label for="c-name">Your name</label><input class="input" id="c-name" type="text" placeholder="Alex Mercer" required="required"></div>
+            <div class="field"><label for="c-email">Email</label><input class="input" id="c-email" type="email" placeholder="alex@company.com" required="required"></div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px">
+            <div class="field"><label for="c-company">Company</label><input class="input" id="c-company" type="text" placeholder="Company or team name"></div>
+            <div class="field"><label for="c-role">Your role</label><input class="input" id="c-role" type="text" placeholder="Ops lead, founder, data manager…"></div>
+          </div>
+          <div class="field">
+            <label for="c-stage">Where you think you are</label>
+            <div style="display:flex;flex-direction:column;gap:9px;margin-top:4px" id="c-stage">
+              <label class="radio"><input type="radio" name="stage" value="audit" defaultChecked="{{ true }}"><span class="dot"></span><span>Not sure yet — start with an audit</span></label>
+              <label class="radio"><input type="radio" name="stage" value="build"><span class="dot"></span><span>I know what I need built</span></label>
+              <label class="radio"><input type="radio" name="stage" value="maintain"><span class="dot"></span><span>Something exists and needs looking after</span></label>
+              <label class="radio"><input type="radio" name="stage" value="hands"><span class="dot"></span><span>I need extra hands on my team or a subcontractor</span></label>
+            </div>
+          </div>
+          <div class="field">
+            <label for="c-detail">What's going on?</label>
+            <textarea class="input" id="c-detail" style="min-height:130px" placeholder="What's slow, broken or missing — and what would good look like?" required="required"></textarea>
+          </div>
+          <button class="btn btn-primary blueprint" type="submit" style="font-size:15px;padding:13px 24px;align-self:start">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            Book a free discovery call
+          </button>
+          <p style="font-size:12px;color:var(--color-neutral-600);margin:0">We'll only use this to reply to you. No list, no newsletter.</p>
+        </form>
+        </sc-if>
+        <sc-if value="{{ sent }}">
+        <div style="display:flex;flex-direction:column;gap:12px;padding:12px 0">
+          <span style="font-family:var(--font-heading);font-size:13px;letter-spacing:0.1em;color:var(--color-accent)">RECEIVED</span>
+          <h3 style="font-size:28px;margin:0">Thanks — that's landed.</h3>
+          <p style="font-size:16px;color:var(--color-neutral-800);margin:0">We'll come back within one business day with a few times for a call. If it's urgent, email <a href="mailto:hello@simeranalytics.com">hello@simeranalytics.com</a> and say so in the subject line.</p>
+        </div>
+        </sc-if>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <footer style="border-top:1px solid var(--color-divider)">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(32px,4vw,56px) clamp(20px,5vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:clamp(24px,4vw,48px)">
+      <div style="min-width:0">
+        <div style="display:flex;align-items:baseline;gap:9px;margin-bottom:12px">
+          <span style="display:flex;gap:3px"><span style="width:11px;height:11px;background:var(--color-accent);display:block"></span><span style="width:11px;height:11px;background:var(--color-accent-2);display:block"></span></span>
+          <span style="font-family:var(--font-heading);font-weight:600;font-size:19px;letter-spacing:0.02em;text-transform:uppercase">Simer Analytics</span>
+        </div>
+        <p style="font-size:15px;color:var(--color-neutral-700);margin:0;max-width:26em">Your data + our roadmap = endless opportunities.</p>
+      </div>
+      <div style="min-width:0">
+        <span style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-neutral-600)">Pages</span>
+        <div style="display:flex;flex-direction:column;gap:7px;margin-top:12px;font-size:15px">
+          <a href="#" onClick="{{ goHome }}" style="text-decoration:none;color:inherit">Home</a>
+          <a href="#" onClick="{{ goServices }}" style="text-decoration:none;color:inherit">Services</a>
+          <a href="#" onClick="{{ goIndustries }}" style="text-decoration:none;color:inherit">Industries</a>
+          <a href="#" onClick="{{ goContact }}" style="text-decoration:none;color:inherit">Contact</a>
+        </div>
+      </div>
+      <div style="min-width:0">
+        <span style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-neutral-600)">Industries</span>
+        <div style="display:flex;flex-direction:column;gap:7px;margin-top:12px;font-size:15px;color:var(--color-neutral-700)">
+          <span>Utilities</span>
+          <span>Municipal &amp; public works</span>
+          <span>Renewables &amp; DER</span>
+          <span>Energy retail &amp; DR</span>
+          <span>Water &amp; irrigation</span>
+          <span>Engineering partners</span>
+        </div>
+      </div>
+      <div style="min-width:0">
+        <span style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-neutral-600)">Get in touch</span>
+        <div style="display:flex;flex-direction:column;gap:7px;margin-top:12px;font-size:15px">
+          <a href="mailto:hello@simeranalytics.com">hello@simeranalytics.com</a>
+          <span style="color:var(--color-neutral-700)">Remote-first · North America</span>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid var(--color-divider)">
+      <div style="max-width:1180px;margin:0 auto;padding:16px clamp(20px,5vw,56px);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:12px;color:var(--color-neutral-600)">
+        <span>© 2026 Simer Analytics. All rights reserved.</span>
+        <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:0.06em">INTERVAL DATA · GIS · FORECASTING · RATES · COMPLIANCE</span>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;heroVariant&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;plate&quot;,&quot;stacked&quot;],&quot;default&quot;:&quot;plate&quot;,&quot;tsType&quot;:&quot;'plate' | 'stacked'&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;showAvailability&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;showFounderPhoto&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;About&quot;}}">
+class Component extends DCLogic {
+  state = { page: 'home', sent: false };
+
+  jump(y) {
+    const root = document.documentElement;
+    const prev = root.style.scrollBehavior;
+    root.style.scrollBehavior = 'auto';
+    window.scrollTo(0, y);
+    root.style.scrollBehavior = prev;
+  }
+
+  seek(anchor, tries) {
+    const el = document.getElementById(anchor);
+    if (el) {
+      this.jump(el.getBoundingClientRect().top + window.scrollY - 70);
+      return;
+    }
+    if (tries > 0) setTimeout(() => this.seek(anchor, tries - 1), 40);
+  }
+
+  nav(page, anchor) {
+    return (e) => {
+      if (e) e.preventDefault();
+      this.setState({ page, sent: false });
+      if (typeof window === 'undefined') return;
+      if (!anchor) { this.jump(0); return; }
+      setTimeout(() => this.seek(anchor, 25), 0);
+    };
+  }
+
+  renderVals() {
+    const page = this.state.page;
+    const variant = this.props.heroVariant ?? 'plate';
+    return {
+      isHome: page === 'home',
+      isServices: page === 'services',
+      isContact: page === 'contact',
+      goHome: this.nav('home'),
+      goServices: this.nav('services'),
+      goIndustries: this.nav('services', 'industries'),
+      goContact: this.nav('contact'),
+      heroPlate: variant === 'plate',
+      showAvailability: this.props.showAvailability ?? true,
+      showFounderPhoto: this.props.showFounderPhoto ?? true,
+      sent: this.state.sent,
+      notSent: !this.state.sent,
+      onSubmit: (e) => {
+        e.preventDefault();
+        this.setState({ sent: true });
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
